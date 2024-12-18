@@ -52,38 +52,31 @@ export default function App() {
 
   return (
     <div className="container mx-auto p-4">
-      <div>
-        // affiche l'écran en fonction de l'état de l'application // WELCOME
+      <div class="mt-6 flex flex-col items-center">
+      <h1 className="text-4xl font-bold text-primary text-[var(--color-secondary)] mb-10">Secret Santa</h1>
         {currentScreen === "welcome" && (
           <WelcomeScreen onStart={() => setCurrentScreen("input")} />
         )}
-        // INPUT
         {currentScreen === "input" && (
           <>
-            <h2 className="text-2xl font-bold mb-6 text-center">
-              Ajoutez les participants
-            </h2>
+            
             <ParticipantInput
               onAddParticipant={addParticipant}
               participants={participants}
               onRemoveParticipant={removeParticipant}
             />
             <div className="mt-6">
-              <button className="button w-full" onClick={distributeGifts}>
+              <button className="button w-full bg-[var(--color-secondary)] text-white text-xl  px-8 py-3 rounded-lg font-bold" onClick={distributeGifts}>
                 Distribuer les cadeaux
               </button>
             </div>
           </>
         )}
-        // ASSIGNMENTS
         {currentScreen === "assignments" && (
           <>
-            <h2 className="text-2xl font-bold mb-6 text-center">
-              Attributions des cadeaux
-            </h2>
             <AssignmentDisplay assignments={assignments} />
-            <div className="mt-6">
-              <button className="button w-full" onClick={resetApp}>
+            <div className="mt-10 w-full">
+              <button className="button w-full bg-[var(--color-green)] text-white text-xl py-3 rounded-lg font-bold" onClick={resetApp}>
                 Recommencer
               </button>
             </div>

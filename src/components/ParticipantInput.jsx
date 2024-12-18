@@ -23,34 +23,35 @@ export function ParticipantInput({
   };
 
   return (
-    <div className="space-y-4">
-      // Champs de saisie pour ajouter un participant
-      <div className="flex space-x-2">
+    <div className="bg-[var(--color-grey)] p-7 w-full rounded-lg">
+      <section class="flex justify-center"> <h2 className="text-4xl font-bold mb-6 text-center text-[var(--color-green)] border-b-2 border-[var(--color-green)] w-fit pb-7">
+              Participants
+            </h2></section>
+     
+      <div className="flex flex-col gap-3">
         <input
           type="text"
           className="input flex-grow"
-          placeholder="Entrez un nom"
+          placeholder="Saisir un nom"
           value={currentName}
           onChange={(e) => setCurrentName(e.target.value)}
           onKeyPress={(e) => e.key === "Enter" && addParticipant()}
+          class="outline rounded-lg p-2"
         />
-        <button className="button" onClick={addParticipant}>
+        <button className="button" class="bg-[var(--color-green)] text-white py-3 rounded-lg font-bold" onClick={addParticipant}>
           Ajouter
         </button>
       </div>
-      // Liste des participants ajoutés
-      <ul className="space-y-2">
+      <ul className="mt-8">
         {participants.map((name, index) => (
-          <li key={index} className="list-item">
-            {name}
-            <div className="space-x-2">
+          <li key={index} className="list-item" class="flex gap-2 mb-4">
+            <p class="flex bg-[var(--color-secondary)] text-white py-2 rounded-lg w-full justify-center items-center">{name}</p>
               <button
-                className="text-red-500 hover:text-red-700"
+                className="bg-[var(--color-red)] py-4 px-6 rounded-lg"
                 onClick={() => onRemoveParticipant(index)}
               >
-                Supprimer
+                <img src="./close.png" alt="X" />
               </button>
-            </div>
           </li>
         ))}
       </ul>
