@@ -51,9 +51,12 @@ export default function App() {
   };
 
   return (
-    <div className="container mx-auto p-4">
+    <section> <img src="./tree.png" alt="arbre de noel" className="absolute overflow-hidden h-[80vh] top-[10%] z-0" />
+    <img src="./deco.png" alt="boules de noel" className="absolute overflow-hidden h-[80vh] right-[5%] z-0" />
+    <div className="container mx-auto p-4 md:max-w-[400px] min-h-screen shadow-lg bg-primary z-10 relative">
       <div class="mt-6 flex flex-col items-center">
-      <h1 className="text-4xl font-bold text-primary text-[var(--color-secondary)] mb-10">Secret Santa</h1>
+        <h1 className="text-5xl font-secondary mb-12 mt-2 relative">Secret Santa<img src="./titre.png" alt="Secret Santa" className="max-w-[30%] absolute right-[-55px] top-[-40px]"/></h1>
+        
         {currentScreen === "welcome" && (
           <WelcomeScreen onStart={() => setCurrentScreen("input")} />
         )}
@@ -65,7 +68,7 @@ export default function App() {
               participants={participants}
               onRemoveParticipant={removeParticipant}
             />
-            <div className="mt-6">
+            <div className="mt-6 w-full">
               <button className="button w-full bg-[var(--color-secondary)] text-white text-xl  px-8 py-3 rounded-lg font-bold" onClick={distributeGifts}>
                 Distribuer les cadeaux
               </button>
@@ -84,5 +87,6 @@ export default function App() {
         )}
       </div>
     </div>
+    </section>
   );
 }

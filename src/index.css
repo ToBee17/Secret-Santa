@@ -16,35 +16,38 @@
   ::file-selector-button {
     border-color: var(--color-gray-200, currentColor);
   }
-}
 
-@font-face {
-  font-family: 'LilyScriptOne';
-  font-style:  normal;
-  font-weight: 100 900;
-  font-display: swap;
-  src: url('/fonts/LilyScriptOne-regular.ttf') format('ttf');
-}
-
-@font-face {
-  font-family: 'Raleway';
-  font-style:  normal;
-  font-weight: 100 500 600 800;
-  font-display: swap;
-  src: url('/fonts/Raleway.ttf') format('ttf');
+  @font-face {
+    font-family: 'LilyScriptOne';
+    font-style:  normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url('/fonts/LilyScriptOne.ttf') format('truetype');
+  }
   
+  @font-face {
+    font-family: 'Raleway';
+    font-style:  normal;
+    font-weight: 100 500 600 800;
+    font-display: swap;
+    src: url('/fonts/Raleway.ttf') format('truetype');
+    
+  }
 }
 
-:root{
+@theme {
   --color-primary: #BDB9D0;
   --color-secondary: #3B374D;
   --color-grey: #E7E7E9;
   --color-red: #EA4242;
   --color-green: #018572;
+
+  --font-primary: 'Raleway';
+  --font-secondary: 'LilyScriptOne';
 }
 
 body {
-  font-family: 'Raleway', cursive;
-  background-color: var(--color-primary);
+  background-color: var(--color-secondary);
   color: var(--color-secondary);
+  font-family: var(--font-primary);
 }
